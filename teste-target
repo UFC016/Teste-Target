@@ -1,0 +1,83 @@
+1) Linguagem  Python
+
+INDICE= 13
+SOMA= 0
+K = 0
+
+while K < INDICE:
+    K = K + 1
+    SOMA = SOMA + K
+
+print(SOMA)
+
+    
+2) Linguagem  Python
+
+n = int(input("Digite um número inteiro: "))
+
+fibonacci = [0, 1]
+
+while fibonacci[-1] < n:
+    soma = fibonacci[-1] + fibonacci[-2]
+    fibonacci.append(soma)
+
+if n in fibonacci:
+    print(f"O número {n} pertence à sequência de Fibonacci!")
+else:
+    print(f"O número {n} NÃO pertence à sequência de Fibonacci.")
+
+
+3)import json
+
+with open(r"dados.json") as file:
+    faturamento = json.load(file)
+
+minimo = faturamento[0]['valor']
+maximo = faturamento[0]['valor']
+soma = 0
+dias_acima_media = 0
+
+for dia in faturamento:
+    valor = dia['valor']
+    if valor < minimo:
+        minimo = valor
+    if valor > maximo:
+        maximo = valor
+    soma += valor
+
+media = soma / len(faturamento)
+
+for dia in faturamento:
+    if dia['valor'] > media:
+        dias_acima_media += 1
+
+print(f'Menor faturamento diário: R${minimo:.2f}')
+print(f'Maior faturamento diário: R${maximo:.2f}')
+print(f'Número de dias com faturamento acima da média: {dias_acima_media}')
+
+4)fat_estados = {
+    'SP': 67836.43,
+    'RJ': 36678.66,
+    'MG': 29229.88,
+    'ES': 27165.48,
+    'Outros': 19849.53
+}
+
+total_fat = sum(fat_estados.values())
+
+percentuais = {estado: (fat / total_fat) * 100 for estado, fat in fat_estados.items()}
+
+for estado, percentual in percentuais.items():
+    print(f'{estado}: {percentual:.2f}%')
+    
+ 5)
+ string = input("Digite uma string: ")
+string_ao_inverso = ""
+
+for i in range(len(string)-1, -1, -1):
+    string_ao_inverso += string[i]
+
+print("String invertida:", string_ao_inverso)
+
+
+
